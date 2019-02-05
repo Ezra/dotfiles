@@ -1,0 +1,37 @@
+# examples of setting border colors
+# dark color, e.g. blue
+#set -g status-bg blue
+#set -g status-fg white
+#set -g window-status-current-fg blue
+#set -g window-status-current-bg white
+#set -g pane-border-fg blue
+#set -g pane-border-bg blue
+#set -g pane-active-border-fg default
+#set -g pane-active-border-bg blue
+
+#light color, e.g. cyan
+set -g status-bg colour81
+set -g status-fg black
+set -g window-status-current-fg colour81
+set -g window-status-current-bg black
+set -g pane-border-fg default
+set -g pane-border-bg default
+set -g pane-active-border-fg colour81
+set -g pane-active-border-bg default
+
+# send prefix, for if you ever need to send actual C-z
+bind C-z send-prefix
+
+# fancy pane join, fancy pane send
+bind-key C-j command-prompt -p "join pane from:" "join-pane -s '%%'"
+bind-key C-s command-prompt -p "send pane to:" "join-pane -t '%%'"
+bind-key C-b break-pane
+
+# detach everyone else who's attached
+bind-key C-d attach -d
+
+# rebind splits for late-model tmux
+# requires environment variable CHERE_INVOKING=1 on cygwin
+bind c new-window      -c "#{pane_current_path}"
+bind - split-window    -c "#{pane_current_path}"
+bind | split-window -h -c "#{pane_current_path}"

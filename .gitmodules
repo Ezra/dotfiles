@@ -1,0 +1,6 @@
+[submodule "zsh/zsh-syntax-highlighting"]
+	path = zsh/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "vim/inkpot"]
+	path = vim/inkpot
+	url = https://github.com/ciaranm/inkpot
