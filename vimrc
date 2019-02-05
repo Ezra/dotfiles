@@ -79,6 +79,46 @@ set laststatus=2
 set ruler
 
 
+"" 3. Further customization
+" Things I'd expect to be user-specific, but that I want everywhere I use this
+" config set
+
+" Inkpot, a downloaded colorscheme
+" (Inkpot is a 256-color dark color scheme. Among its virtues are good reds
+" and greens for diff mode.)
+colorscheme inkpot
+
+" keep lines on screen after cursor
+set so=2
+
+" indent when wrapping
+" http://stackoverflow.com/questions/1204149/smart-wrap-in-vim
+":set showbreak=>>>
+":set showbreak=\ \ \ \ \ \ \ \ 
+:set showbreak=>>\ \ \ \ \ \ \ \ 
+
+" Cursor shape for terminals that support it, e.g. mintty
+" (not supported on WSL as of 2019-02-04)
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
+
+" highlight all search matches
+" (hide current results with :noh)
+set hlsearch
+
+" split down and to the right, rather than left and above
+set splitbelow
+set splitright
+
+" just stop with the macros
+nnoremap Q <nop>
+
+" stop beeping. you can visual beep
+set visualbell
+
+
 "" 3. Meta.
 
 " source local vimrc, per http://blog.sanctum.geek.nz/local-vimrc-files/
