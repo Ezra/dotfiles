@@ -1,6 +1,7 @@
 - clean: ['~']
 
 - link:
+    ~/.bash_profile:
     ~/.tmux.conf:
     ~/.vim:
     ~/.vimrc:
