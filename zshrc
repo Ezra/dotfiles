@@ -42,7 +42,7 @@ bindkey -e
 export EDITOR=vim
 
 # open Firefox from WSL
-export BROWSER='/mnt/c/Program Files (x86)/Mozilla Firefox/firefox.exe'
+export BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
 
 ## miniconda lazy loading
 ## miniconda is slow
