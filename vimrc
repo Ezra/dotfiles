@@ -20,7 +20,7 @@ au BufRead,BufNewFile Snakefile set filetype=python
 " rainbow csv/tsv
 " TODO: add rainbow-csv package to checked-out packages
 " TODO: push "setlocal number" rather than "set number" upstream to rainbow-csv
-let g:rcsv_colorpairs = [['yellow', 'yellow'], ['green', 'green'], ['red', 'red'], ['cyan', 'cyan'], ['magenta',  'magenta'], ['NONE', 'NONE'], ['darkgreen', 'darkgreen'], ['darkred', 'darkred'], ['blue', 'blue'],               ['darkmagenta', 'darkmagenta']]
+let g:rcsv_colorpairs = [['NONE', 'NONE'], ['cyan', 'cyan'], ['red', 'red'], ['green', 'green'], ['magenta', 'magenta'], ['yellow', 'yellow'], ['blue', 'blue'], ['darkred', 'darkred'], ['darkgreen', 'darkgreen'], ['darkmagenta', 'darkmagenta']]
 " TODO: push this autocmd upstream to rainbow-csv as well
 autocmd FileType tsv setlocal noexpandtab
 
