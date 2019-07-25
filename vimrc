@@ -14,7 +14,15 @@ filetype plugin indent on
 syntax enable
 set autoindent
 
+" recognize file types
 au BufRead,BufNewFile Snakefile set filetype=python
+
+" rainbow csv/tsv
+" TODO: add rainbow-csv package to checked-out packages
+" TODO: push "setlocal number" rather than "set number" upstream to rainbow-csv
+let g:rcsv_colorpairs = [['yellow', 'yellow'], ['green', 'green'], ['red', 'red'], ['cyan', 'cyan'], ['magenta',  'magenta'], ['NONE', 'NONE'], ['darkgreen', 'darkgreen'], ['darkred', 'darkred'], ['blue', 'blue'],               ['darkmagenta', 'darkmagenta']]
+" TODO: push this autocmd upstream to rainbow-csv as well
+autocmd FileType tsv setlocal noexpandtab
 
 " move cursor where there are no characters
 set virtualedit=all
