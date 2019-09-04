@@ -5,3 +5,4 @@ usage e.g.:
 * sudo apt install git python
 * git clone [this-repo]
 * dotfiles/deploy
+* xargs sudo apt install <dotfiles/apt.list
