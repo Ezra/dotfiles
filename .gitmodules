@@ -10,3 +10,6 @@
 [submodule "vim/pack/plugins/start/rainbow_csv"]
 	path = vim/pack/plugins/start/rainbow_csv
 	url = https://github.com/mechatroner/rainbow_csv.git
+[submodule "vim/pack/plugins/start/python-syntax"]
+	path = vim/pack/plugins/start/python-syntax
+	url = https://github.com/hdima/python-syntax.git

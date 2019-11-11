@@ -27,6 +27,9 @@ let g:rcsv_colorpairs = [['NONE', 'NONE'], ['cyan', 'cyan'], ['red', 'red'], ['g
 " TODO: push this autocmd upstream to rainbow-csv as well
 autocmd FileType tsv setlocal noexpandtab
 
+" python-syntax
+let python_highlight_all = 1
+
 " move cursor where there are no characters
 set virtualedit=all
 
