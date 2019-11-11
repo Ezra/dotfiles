@@ -1,5 +1,7 @@
 "" 1. Editing.
 
+" internal encoding
+set encoding=utf-8
 " file encoding
 " ucs-bom: read the bom if you've got it
 " utf-8: the best encoding
@@ -104,6 +106,13 @@ command Copy call Copyer()
 command Nocopy call NoCopyer()
 
 Nocopy
+
+" shorthand for prev/next buffer
+nmap <C-P> :bp<CR>
+nmap <C-N> :bn<CR>
+
+" case insensitive filename completion
+set wildignorecase
 
 
 "" 2. Display.
