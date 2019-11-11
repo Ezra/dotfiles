@@ -2,7 +2,7 @@
 	path = zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "vim/inkpot"]
-	path = vim/inkpot
+	path = vim/pack/plugins/start/inkpot
 	url = https://github.com/ciaranm/inkpot
 [submodule "dotbot"]
 	path = dotbot
