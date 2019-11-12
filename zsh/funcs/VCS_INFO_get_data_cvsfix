@@ -1,0 +1,29 @@
+## vim:ft=zsh
+
+setopt localoptions NO_shwordsplit
+local cvsbranch cvsbase
+
+# this should usually be defined by zsh
+VCS_INFO_realpath () {
+        setopt localoptions NO_shwordsplit chaselinks
+        (
+                builtin cd -q $1 2> /dev/null && pwd
+        )
+}
+
+cvsbase="."
+while [[ -d "${cvsbase}/../CVS" ]]; do
+    cvsbase="${cvsbase}/.."
+done
+
+cvsbase="$(VCS_INFO_realpath ${cvsbase})"
+if [ -e ./CVS/Tag ]; then
+    cvsbranch=$(< ./CVS/Tag)
+    cvsbranch=${cvsbranch#(T|N)}
+else
+    cvsbranch="HEAD"
+fi
+rrn=${cvsbase:t}
+[[ -z ${cvsbranch} ]] && cvsbranch=${rrn}
+VCS_INFO_formats '' "${cvsbranch}" "${cvsbase}" '' '' '' ''
+return 0
