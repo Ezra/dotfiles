@@ -15,6 +15,7 @@ set fileencodings=ucs-bom,utf-8,sjis,gbk,big5,latin1
 filetype plugin indent on
 syntax enable
 set autoindent
+set modeline
 
 " recognize file types
 au BufRead,BufNewFile Snakefile set filetype=python
