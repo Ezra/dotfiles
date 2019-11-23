@@ -18,11 +18,11 @@ fi
 export CHERE_INVOKING=1
 
 ### try launching tmux or zsh
-#exec bash -c "tmux -2 new -A -s ezra || zsh || bash"
+#exec bash -c "tmux -u -2 new -A -s ezra || zsh || bash"
 
 # check if we should tmux
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
+  exec tmux -u -2
 fi
 
 # source the users bashrc if it exists
