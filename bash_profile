@@ -17,6 +17,10 @@ fi
 # for tmux: new windows should open in the same location
 export CHERE_INVOKING=1
 
+# store our ssh credentials
+eval $(ssh-agent)
+
+
 ### try launching tmux or zsh
 #exec bash -c "tmux -u -2 new -A -s ezra || zsh || bash"
 

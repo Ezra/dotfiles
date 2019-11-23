@@ -8,6 +8,7 @@
     ~/.dotfiles: ''
     ~/.aliases:
     ~/.bash_profile:
+    ~/.ssh/config:
     ~/.tmux.conf:
     ~/.vim:
     ~/.vimrc:
