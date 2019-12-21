@@ -16,4 +16,5 @@
     ~/.zshrc:
 
 - shell:
+  - [chmod 644 ~/.ssh/config, Setting ssh config to private]
   - [git submodule update --init --recursive, Installing submodules]
