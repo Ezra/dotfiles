@@ -16,5 +16,6 @@
     ~/.zshrc:
 
 - shell:
+  - [chmod -R o-w ~/.zsh && chmod -R g-w ~/.zsh, Setting zsh directory to private]
   - [chmod 644 ~/.ssh/config, Setting ssh config to private]
   - [git submodule update --init --recursive, Installing submodules]
