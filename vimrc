@@ -129,6 +129,9 @@ set laststatus=2
 " show where in the file we are
 set ruler
 
+" for fallback if inkpot fails since I use a dark terminal
+set bg=dark
+
 " Inkpot, a downloaded colorscheme
 " (Inkpot is a 256-color dark color scheme. Among its virtues are good reds
 " and greens for diff mode.)
