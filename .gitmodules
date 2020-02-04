@@ -13,3 +13,9 @@
 [submodule "vim/pack/plugins/start/python-syntax"]
 	path = vim/pack/plugins/start/python-syntax
 	url = https://github.com/hdima/python-syntax.git
+[submodule "vim/pack/plugins/start/vim-characterize"]
+	path = vim/pack/plugins/start/characterize
+	url = git@github.com:tpope/vim-characterize.git
+[submodule "vim/pack/plugins/start/Recover.vim"]
+	path = vim/pack/plugins/start/recover
+	url = git@github.com:chrisbra/Recover.vim.git
