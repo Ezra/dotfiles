@@ -10,9 +10,9 @@ alias zhead='zh'
 # for cygwin
 #alias open="cygstart"
 
+# for wsl
+alias explorer='explorer.exe .'
+
 # alias to activate a conda env and do related stuff
 #alias py27='conda activate py27 && source <(inv --print-completion-script zsh) && unalias py27 py3'
 #alias py3='conda activate py3 && source <(inv --print-completion-script zsh) && unalias py27 py3'
-
-# for wsl
-alias explorer='explorer.exe .'
