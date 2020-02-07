@@ -1,0 +1,7 @@
+# vim: set ft=sh : #
+
+# use vim for e.g. cvs commits
+export EDITOR="vim"
+
+# open Firefox from WSL
+export BROWSER="/c/Program Files/Mozilla Firefox/firefox.exe"

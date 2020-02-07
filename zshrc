@@ -38,12 +38,6 @@ setopt appendhistory nomatch histignoredups
 unsetopt null_glob
 bindkey -e
 
-# use vim for e.g. cvs commits
-export EDITOR=vim
-
-# open Firefox from WSL
-#export BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
-
 ## miniconda lazy loading
 ## miniconda is slow
 #function conda() {
@@ -79,6 +73,10 @@ compinit -d "$HOME/.zcompdump"
 # yep it's slow too
 source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
+# load any env-vars
+if [ -f ~/.environment ]; then
+    source ~/.environment
+fi
 # load any aliases
 if [ -f ~/.aliases ]; then
     source ~/.aliases
