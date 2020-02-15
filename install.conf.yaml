@@ -7,6 +7,7 @@
 - link:
     ~/.dotfiles: ''
     ~/.aliases:
+    ~/.environment:
     ~/.bash_profile:
     ~/.ssh/config: ssh/config
     ~/.tmux.conf:
