@@ -1,2 +1,2 @@
 tmux vim git zsh python3 man wget curl
-python3-pip
+python3-pip python3-ipdb
