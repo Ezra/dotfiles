@@ -1,21 +1,28 @@
 [submodule "zsh/zsh-syntax-highlighting"]
 	path = zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+    update = rebase
 [submodule "vim/inkpot"]
 	path = vim/pack/plugins/start/inkpot
 	url = https://github.com/ciaranm/inkpot
+    update = rebase
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
+    update = rebase
 [submodule "vim/pack/plugins/start/rainbow_csv"]
 	path = vim/pack/plugins/start/rainbow_csv
 	url = https://github.com/mechatroner/rainbow_csv.git
+    update = rebase
 [submodule "vim/pack/plugins/start/python-syntax"]
 	path = vim/pack/plugins/start/python-syntax
 	url = https://github.com/hdima/python-syntax.git
+    update = rebase
 [submodule "vim/pack/plugins/start/vim-characterize"]
 	path = vim/pack/plugins/start/characterize
 	url = git@github.com:tpope/vim-characterize.git
+    update = rebase
 [submodule "vim/pack/plugins/start/Recover.vim"]
 	path = vim/pack/plugins/start/recover
 	url = git@github.com:chrisbra/Recover.vim.git
+    update = rebase
