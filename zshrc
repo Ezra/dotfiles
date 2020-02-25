@@ -23,7 +23,7 @@ autoload -Uz VCS_INFO_get_data_cvsfix
 
 # Prompt stuff from zshcontrib
 autoload -U promptinit && promptinit
-source $HOME/.zsh/prompt.zsh
+source "$HOME/.zsh/prompt.zsh"
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -34,12 +34,6 @@ unsetopt beep null_glob
 # End of lines configured by zsh-newuser-install
 
 bindkey -e
-
-# use vim for e.g. cvs commits
-export EDITOR=vim
-
-# open Firefox from WSL
-#export BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
 
 ## miniconda lazy loading
 ## miniconda is slow
@@ -66,16 +60,20 @@ export EDITOR=vim
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} r:|[._-]=** r:|=**'
-zstyle :compinstall filename '/home/ezrab/.zshrc.local'
+zstyle :compinstall filename "$HOME/.zshrc.local"
 
 autoload -Uz compinit
-compinit -d $HOME/.zcompdump
+compinit -d "$HOME/.zcompdump"
 # End of lines added by compinstall
 
 # fish-style syntax highlighting (prefers to be last)
 # yep it's slow too
-source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
+# load any env-vars
+if [ -f ~/.environment ]; then
+    source ~/.environment
+fi
 # load any aliases
 if [ -f ~/.aliases ]; then
     source ~/.aliases
