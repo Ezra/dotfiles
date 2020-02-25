@@ -13,6 +13,7 @@
 
 [core]
 	autocrlf = input
+	editor = vim
 
 # configure difftool as writable vimdiff
 [diff]
