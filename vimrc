@@ -20,6 +20,7 @@ set modeline
 " recognize file types
 au BufRead,BufNewFile Snakefile set filetype=python
 au BufRead,BufNewFile config.txt set filetype=config
+au BufRead,BufNewFile *.cls set filetype=tex
 
 " rainbow csv/tsv
 " TODO: change "set number" to "setlocal number"

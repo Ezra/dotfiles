@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 # examples of setting border colors
 # dark color, e.g. blue
 #set -g status-bg blue

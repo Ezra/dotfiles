@@ -1,2 +1,11 @@
-tmux vim git zsh python3 man wget curl
+curl
+dos2unix
+git
+man
+psmisc
+python3
 python3-pip
+tmux
+vim
+wget
+zsh

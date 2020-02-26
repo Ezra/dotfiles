@@ -1,6 +1,0 @@
-user.email=ezra.bradford@gmail.com
-user.name=Ezra Bradford
-diff.tool=vimdiff
-alias.dt=difftool
-alias.lg=log --oneline
-difftool.vimdiff.cmd=vimdiff "$LOCAL" "$REMOTE"

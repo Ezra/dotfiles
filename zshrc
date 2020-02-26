@@ -29,13 +29,10 @@ source "$HOME/.zsh/prompt.zsh"
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt histverify
-setopt autocd
-unsetopt beep
+setopt appendhistory autocd histverify nomatch histignoredups
+unsetopt beep null_glob
 # End of lines configured by zsh-newuser-install
 
-setopt appendhistory nomatch histignoredups
-unsetopt null_glob
 bindkey -e
 
 ## miniconda lazy loading

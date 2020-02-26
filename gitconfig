@@ -1,0 +1,26 @@
+# vim: ft=config
+
+[user]
+	email = ezra.bradford@gmail.com
+	name = Ezra Bradford
+
+[alias]
+    ci = commit
+    co = checkout
+    dt = difftool
+    gr = log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
+    lg = log --oneline
+
+[core]
+	autocrlf = input
+	editor = vim
+
+# configure difftool as writable vimdiff
+[diff]
+    tool = vimdiff
+[merge]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[difftool "vimdiff"]
+	cmd = vim -f -d -c \"wincmd l\" -c 'cd \"$GIT_PREFIX\"' \"$LOCAL\" \"$REMOTE\"
