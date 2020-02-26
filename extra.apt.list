@@ -1,2 +1,3 @@
-texlive
+docker
 snakemake
+texlive
