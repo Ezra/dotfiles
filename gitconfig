@@ -1,8 +1,8 @@
-# vim: ft=config
+# vim: ft=gitconfig
 
 [user]
-	email = ezra.bradford@gmail.com
-	name = Ezra Bradford
+    email = ezra.bradford@gmail.com
+    name = Ezra Bradford
 
 [alias]
     ci = commit
@@ -12,8 +12,8 @@
     lg = log --oneline
 
 [core]
-	autocrlf = input
-	editor = vim
+    autocrlf = input
+    editor = vim
 
 # configure difftool as writable vimdiff
 [diff]
@@ -23,4 +23,4 @@
 [difftool]
     prompt = false
 [difftool "vimdiff"]
-	cmd = vim -f -d -c \"wincmd l\" -c 'cd \"$GIT_PREFIX\"' \"$LOCAL\" \"$REMOTE\"
+    cmd = vim -f -d -c \"wincmd l\" -c 'cd \"$GIT_PREFIX\"' \"$LOCAL\" \"$REMOTE\"
