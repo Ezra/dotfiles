@@ -1,0 +1,6 @@
+docker-compose
+notebook
+ipdb
+matplotlib
+numpy
+Pint
