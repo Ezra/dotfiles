@@ -9,6 +9,8 @@
     ~/.aliases:
     ~/.environment:
     ~/.bash_profile:
+    ~/.environment:
+    ~/.gitconfig:
     ~/.ssh/config: ssh/config
     ~/.tmux.conf:
     ~/.vim:
