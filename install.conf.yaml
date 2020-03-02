@@ -7,10 +7,11 @@
 - link:
     ~/.dotfiles: ''
     ~/.aliases:
-    ~/.environment:
     ~/.bash_profile:
     ~/.environment:
     ~/.gitconfig:
+    ~/.jupyter/jupyter_notebook_config.py:
+        jupyter/jupyter_notebook_config.py
     ~/.ssh/config: ssh/config
     ~/.tmux.conf:
     ~/.vim:
