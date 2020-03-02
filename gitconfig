@@ -5,12 +5,14 @@
     name = Ezra Bradford
 
 [alias]
+    br = branch
     ci = commit
     co = checkout
     dt = difftool
     #gr = log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
     gr = log --all --color --decorate --full-history --graph --oneline
     lg = log --oneline
+    st = status
 
 [core]
     autocrlf = input
