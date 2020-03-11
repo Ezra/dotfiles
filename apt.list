@@ -1,10 +1,12 @@
 curl
 dos2unix
 git
+ipython
 man-db
 psmisc
 python3
 python3-ipdb
+python3-ipython
 python3-pip
 tmux
 vim
