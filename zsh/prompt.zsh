@@ -35,8 +35,8 @@ zle -N zle-keymap-select
 zle -N zle-line-finish
 zstyle ':vcs_info:cvsfix:*' formats "cvs-[%b]"
 
-PROMPT='%{$fg[green]%}%~%{$reset_color%} %{$fg[blue]%}%1v%{$reset_color%}
-${EXIT_CODE_MARK} ${VI_PROMPT} '
+PROMPT='%{$fg[cyan]%}%m:%{$reset_color%}%{$fg[green]%}%~%{$reset_color%} %{$fg[blue]%}%1v%{$reset_color%}
+${EXIT_CODE_MARK} '
 
 RPROMPT=''
 
