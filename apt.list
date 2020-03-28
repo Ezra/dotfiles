@@ -1,7 +1,7 @@
 curl
+dnsutils
 dos2unix
 git
-ipython
 man-db
 psmisc
 python3
