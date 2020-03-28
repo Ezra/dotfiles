@@ -9,6 +9,7 @@ python3-ipdb
 python3-ipython
 python3-pip
 tmux
+tree
 vim
 wget
 zsh
