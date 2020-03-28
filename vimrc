@@ -22,6 +22,8 @@ au BufRead,BufNewFile Snakefile set filetype=python
 au BufRead,BufNewFile config.txt set filetype=config
 au BufRead,BufNewFile *.cls set filetype=tex
 
+au FileType gitconfig setlocal noexpandtab
+
 " rainbow csv/tsv
 " TODO: change "set number" to "setlocal number"
 "       and push it upstream
