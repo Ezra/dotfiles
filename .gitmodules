@@ -26,3 +26,6 @@
 	path = vim/pack/plugins/start/recover
 	url = git@github.com:chrisbra/Recover.vim.git
     update = rebase
+[submodule "vim/pack/plugins/start/coveragepy.vim"]
+	path = vim/pack/plugins/start/coveragepy.vim
+	url = git@github.com:alfredodeza/coveragepy.vim.git
