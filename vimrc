@@ -43,6 +43,7 @@ set virtualedit=all
 " don't make tabs
 set expandtab
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 
 " scroll with mouse
