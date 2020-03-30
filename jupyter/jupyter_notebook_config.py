@@ -549,7 +549,7 @@ c.NotebookApp.use_redirect_file = False
 #c.Session.unpacker = 'json'
 
 ## Username for the Session. Default is your system username.
-#c.Session.username = 'ezrab'
+#c.Session.username = 'ezra_bradford'
 
 #------------------------------------------------------------------------------
 # MultiKernelManager(LoggingConfigurable) configuration
@@ -569,6 +569,10 @@ c.NotebookApp.use_redirect_file = False
 #------------------------------------------------------------------------------
 
 ## A KernelManager that handles notebook mapping and HTTP error handling
+
+## White list of allowed kernel message types. When the list is empty, all
+#  message types are allowed.
+#c.MappingKernelManager.allowed_message_types = []
 
 ## Whether messages from kernels whose frontends have disconnected should be
 #  buffered in-memory.
@@ -601,13 +605,30 @@ c.NotebookApp.use_redirect_file = False
 #  
 #  On starting and restarting kernels, we check whether the kernel is running and
 #  responsive by sending kernel_info_requests. This sets the timeout in seconds
-#  for how long the kernel can take before being presumed dead.  This affects the
-#  MappingKernelManager (which handles kernel restarts)  and the
+#  for how long the kernel can take before being presumed dead. This affects the
+#  MappingKernelManager (which handles kernel restarts) and the
 #  ZMQChannelsHandler (which handles the startup).
 #c.MappingKernelManager.kernel_info_timeout = 60
 
 ## 
 #c.MappingKernelManager.root_dir = ''
+
+#------------------------------------------------------------------------------
+# KernelSpecManager(LoggingConfigurable) configuration
+#------------------------------------------------------------------------------
+
+## If there is no Python kernelspec registered and the IPython kernel is
+#  available, ensure it is added to the spec list.
+#c.KernelSpecManager.ensure_native_kernel = True
+
+## The kernel spec class.  This is configurable to allow subclassing of the
+#  KernelSpecManager for customized behavior.
+#c.KernelSpecManager.kernel_spec_class = 'jupyter_client.kernelspec.KernelSpec'
+
+## Whitelist of allowed kernel names.
+#  
+#  By default, all installed kernels are allowed.
+#c.KernelSpecManager.whitelist = set()
 
 #------------------------------------------------------------------------------
 # ContentsManager(LoggingConfigurable) configuration
@@ -707,8 +728,8 @@ c.NotebookApp.use_redirect_file = False
 #  log : logging.Logger
 
 ## By default notebooks are saved on disk on a temporary file and then if
-#  succefully written, it replaces the old ones. This procedure, namely
-#  'atomic_writing', causes some bugs on file system whitout operation order
+#  successfully written, it replaces the old ones. This procedure, namely
+#  'atomic_writing', causes some bugs on file system without operation order
 #  enforcement (like some networked fs). If set to False, the new notebook is
 #  written directly on the old one which could fail (eg: full filesystem or quota
 #  )
@@ -769,18 +790,87 @@ c.NotebookApp.use_redirect_file = False
 #c.NotebookNotary.store_factory = traitlets.Undefined
 
 #------------------------------------------------------------------------------
-# KernelSpecManager(LoggingConfigurable) configuration
+# GatewayKernelManager(MappingKernelManager) configuration
 #------------------------------------------------------------------------------
 
-## If there is no Python kernelspec registered and the IPython kernel is
-#  available, ensure it is added to the spec list.
-#c.KernelSpecManager.ensure_native_kernel = True
+## Kernel manager that supports remote kernels hosted by Jupyter Kernel or
+#  Enterprise Gateway.
 
-## The kernel spec class.  This is configurable to allow subclassing of the
-#  KernelSpecManager for customized behavior.
-#c.KernelSpecManager.kernel_spec_class = 'jupyter_client.kernelspec.KernelSpec'
+#------------------------------------------------------------------------------
+# GatewayKernelSpecManager(KernelSpecManager) configuration
+#------------------------------------------------------------------------------
 
-## Whitelist of allowed kernel names.
-#  
-#  By default, all installed kernels are allowed.
-#c.KernelSpecManager.whitelist = set()
+#------------------------------------------------------------------------------
+# GatewayClient(SingletonConfigurable) configuration
+#------------------------------------------------------------------------------
+
+## This class manages the configuration.  It's its own singleton class so that we
+#  can share these values across all objects.  It also contains some helper methods
+#   to build request arguments out of the various config options.
+
+## The authorization token used in the HTTP headers.  (JUPYTER_GATEWAY_AUTH_TOKEN
+#  env var)
+#c.GatewayClient.auth_token = None
+
+## The filename of CA certificates or None to use defaults.
+#  (JUPYTER_GATEWAY_CA_CERTS env var)
+#c.GatewayClient.ca_certs = None
+
+## The filename for client SSL certificate, if any.  (JUPYTER_GATEWAY_CLIENT_CERT
+#  env var)
+#c.GatewayClient.client_cert = None
+
+## The filename for client SSL key, if any.  (JUPYTER_GATEWAY_CLIENT_KEY env var)
+#c.GatewayClient.client_key = None
+
+## The time allowed for HTTP connection establishment with the Gateway server.
+#  (JUPYTER_GATEWAY_CONNECT_TIMEOUT env var)
+#c.GatewayClient.connect_timeout = 60.0
+
+## A comma-separated list of environment variable names that will be included,
+#  along with their values, in the kernel startup request.  The corresponding
+#  `env_whitelist` configuration value must also be set on the Gateway server -
+#  since that configuration value indicates which environmental values to make
+#  available to the kernel. (JUPYTER_GATEWAY_ENV_WHITELIST env var)
+#c.GatewayClient.env_whitelist = ''
+
+## Additional HTTP headers to pass on the request.  This value will be converted
+#  to a dict. (JUPYTER_GATEWAY_HEADERS env var)
+#c.GatewayClient.headers = '{}'
+
+## The password for HTTP authentication.  (JUPYTER_GATEWAY_HTTP_PWD env var)
+#c.GatewayClient.http_pwd = None
+
+## The username for HTTP authentication. (JUPYTER_GATEWAY_HTTP_USER env var)
+#c.GatewayClient.http_user = None
+
+## The gateway API endpoint for accessing kernel resources
+#  (JUPYTER_GATEWAY_KERNELS_ENDPOINT env var)
+#c.GatewayClient.kernels_endpoint = '/api/kernels'
+
+## The gateway API endpoint for accessing kernelspecs
+#  (JUPYTER_GATEWAY_KERNELSPECS_ENDPOINT env var)
+#c.GatewayClient.kernelspecs_endpoint = '/api/kernelspecs'
+
+## The gateway endpoint for accessing kernelspecs resources
+#  (JUPYTER_GATEWAY_KERNELSPECS_RESOURCE_ENDPOINT env var)
+#c.GatewayClient.kernelspecs_resource_endpoint = '/kernelspecs'
+
+## The time allowed for HTTP request completion. (JUPYTER_GATEWAY_REQUEST_TIMEOUT
+#  env var)
+#c.GatewayClient.request_timeout = 60.0
+
+## The url of the Kernel or Enterprise Gateway server where kernel specifications
+#  are defined and kernel management takes place. If defined, this Notebook
+#  server acts as a proxy for all kernel management and kernel specification
+#  retrieval.  (JUPYTER_GATEWAY_URL env var)
+#c.GatewayClient.url = None
+
+## For HTTPS requests, determines if server's certificate should be validated or
+#  not. (JUPYTER_GATEWAY_VALIDATE_CERT env var)
+#c.GatewayClient.validate_cert = True
+
+## The websocket url of the Kernel or Enterprise Gateway server.  If not
+#  provided, this value will correspond to the value of the Gateway url with 'ws'
+#  in place of 'http'.  (JUPYTER_GATEWAY_WS_URL env var)
+#c.GatewayClient.ws_url = None
