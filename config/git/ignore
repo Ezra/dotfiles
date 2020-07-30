@@ -7,3 +7,6 @@
 
 # python caches
 __pycache__/
+
+# Visual Studio Code project state
+.vscode/
